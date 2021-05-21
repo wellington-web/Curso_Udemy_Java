@@ -7,6 +7,9 @@ public class Student {
     private Double secondNote;
     private Double thirdNote;
 
+    public Student(){
+    }
+
     public Student(String name, Double firstNote, Double secondNote, Double thirdNote) {
         this.name = name;
         this.firstNote = firstNote;

@@ -20,7 +20,7 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Student student = new Student(null, 0.0, 0.0, 0.0);
+        Student student = new Student();
 
         System.out.println("Student's name: ");
         student.setName(sc.nextLine());
@@ -52,10 +52,7 @@ public class App {
             }
         } while (student.getThirdNote() <= -1 || student.getThirdNote() >= 36);
 
-        if ( student.finalGrade() >= 101 || student.finalGrade() <= -1  ) {
-            System.out.println("Invalid sum");
-        }
-        else if(student.finalGrade() >= 60){
+        if  (student.finalGrade() >= 60){
             System.out.println(student.toStringFinal(student));
             System.out.println("Passed on");
         }

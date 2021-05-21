@@ -38,8 +38,8 @@ public class App {
 
         if (resp == 'y'){
             System.out.println("Enter deposit amount: ");
-            BigDecimal initialDeposit = sc.nextBigDecimal();
-            account = new Account(holder, accountNumber, initialDeposit);
+            BigDecimal balance = sc.nextBigDecimal();
+            account = new Account(holder, accountNumber, balance);
         }
         else {
             account =new Account(holder, accountNumber);
