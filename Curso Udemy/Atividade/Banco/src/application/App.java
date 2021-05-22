@@ -42,7 +42,7 @@ public class App {
             account = new Account(holder, accountNumber, balance);
         }
         else {
-            account =new Account(holder, accountNumber);
+            account = new Account(holder, accountNumber);
         }
 
         System.out.println();
@@ -58,9 +58,9 @@ public class App {
         System.out.println(account);
 
         System.out.println();
-        System.out.println("Enter the withdrawal amount: ");
-        BigDecimal withdrawalAmount = sc.nextBigDecimal();
-        account.withdraw(withdrawalAmount);
+        System.out.println("Enter the withdraw amount: ");
+        BigDecimal withdrawAmount = sc.nextBigDecimal();
+        account.withdraw(withdrawAmount);
 
         System.out.println("Upgraded account: ");
         System.out.println(account);

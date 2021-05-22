@@ -11,6 +11,7 @@ package application;
 
 import entity.Product;
 
+import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product(null,null,0);
+        Product product = new Product();
 
         System.out.println("Enter product data: ");
 
@@ -32,13 +33,13 @@ public class App {
         product.setPrice(sc.nextBigDecimal());
 
         System.out.print("Quantity in stock: ");
-        product.setStock(sc.nextInt());
+        product.setStock(sc.nextBigDecimal());
 
         System.out.println(product);
         System.out.println();
 
         System.out.print("Enter the quantity of products you want to add: ");
-        Integer stockAdd = sc.nextInt();
+        BigDecimal stockAdd = sc.nextBigDecimal();
         product.stockAdd(stockAdd);
 
         System.out.println();
@@ -46,7 +47,7 @@ public class App {
 
         System.out.println();
         System.out.print("Enter the quantity of products you want to withdraw: ");
-        Integer quantityWithdraw = sc.nextInt();
+        BigDecimal quantityWithdraw = sc.nextBigDecimal();
         product.withdrawStock(quantityWithdraw);
 
         System.out.println();

@@ -41,8 +41,8 @@ public class Employee {
         this.salary = salary;
     }
 
-    public void increaseSalary(Double percentage) {
-        setSalary(salary.add(salary.multiply(BigDecimal.valueOf(percentage)).divide(BigDecimal.valueOf(100))));
+    public void increaseSalary(BigDecimal percentage) {
+        setSalary(salary.add(salary.multiply((percentage)).divide(BigDecimal.valueOf(100))));
     }
 
     public  String toString() {

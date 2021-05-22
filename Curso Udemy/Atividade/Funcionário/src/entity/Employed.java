@@ -5,22 +5,19 @@ import java.math.BigDecimal;
 public class Employed {
 
     private String name;
-    private BigDecimal grossSalary;
+    private BigDecimal salary;
+    private BigDecimal taxPercentage;
+    private BigDecimal increasePercentage;
 
     public Employed() {
     }
 
-    public Employed(String name, BigDecimal grossSalary) {
+    public Employed(String name, BigDecimal salary, BigDecimal taxPercentage, BigDecimal increasePercentage) {
         this.name = name;
-        this.grossSalary = grossSalary;
-    }
-
-    /* public Employed(String name, BigDecimal grossSalary, Double taxPercentage, Double percentageOfIncrease) {
-        this.name = name;
-        this.grossSalary = grossSalary;
+        this.salary = salary;
         this.taxPercentage = taxPercentage;
-        this.percentageOfIncrease = percentageOfIncrease;
-    }*/
+        this.increasePercentage = increasePercentage;
+    }
 
     public String getName() {
         return name;
@@ -30,40 +27,49 @@ public class Employed {
         this.name = name;
     }
 
-    public BigDecimal getGrossSalary() {
-        return grossSalary;
+    public BigDecimal getSalary() {
+        return salary;
     }
 
-    public void setGrossSalary(BigDecimal grossSalary) {
-        this.grossSalary = grossSalary;
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
     }
 
-    public void
-
-   /* public BigDecimal netSalaryWithoutIncrease() {
-        return grossSalary.subtract((BigDecimal.valueOf(taxPercentage).divide(BigDecimal.valueOf(100)).multiply(grossSalary)));
+    public BigDecimal getTaxPercentage() {
+        return taxPercentage;
     }
 
-    public BigDecimal grossSalaryWithIncrease() {
-        return grossSalary.add((BigDecimal.valueOf(percentageOfIncrease).divide(BigDecimal.valueOf(100)).multiply(grossSalary)));
+    public void setTaxPercentage(BigDecimal taxPercentage) {
+        this.taxPercentage = taxPercentage;
     }
 
-    public BigDecimal netSalaryWithIncrease() {
-        return grossSalaryWithIncrease().subtract((BigDecimal.valueOf(taxPercentage).divide(BigDecimal.valueOf(100)).multiply(grossSalaryWithIncrease())));
+    public BigDecimal getIncreasePercentage() {
+        return increasePercentage;
+    }
 
-    }*/
+    public void setIncreasePercentage(BigDecimal increasePercentage) {
+        this.increasePercentage = increasePercentage;
+    }
+
+    public BigDecimal netSalary () {
+        return salary.subtract((taxPercentage.divide(BigDecimal.valueOf(100)).multiply(salary)));
+    }
+
+    public void netSalaryIncrease() {
+        setSalary(salary.add((increasePercentage.divide(BigDecimal.valueOf(100)).multiply(salary))));
+    }
 
     public String toStringDataSalaryWithIncrease() {
         return "Name: "
                 + name
                 + ", Net salary: "
-                + String.format("%.2f", netSalaryWithIncrease());
+                + String.format("%.2f", netSalary());
     }
 
     public String toStringDataSalaryWithoutIncrease() {
         return "Name: "
                 + name
                 + ", Net salary: "
-                + String.format("%.2f", netSalaryWithoutIncrease());
+                + String.format("%.2f", netSalary());
     }
 }

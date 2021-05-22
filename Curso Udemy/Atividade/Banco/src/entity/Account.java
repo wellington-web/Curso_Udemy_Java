@@ -40,9 +40,9 @@ public class Account {
         balance = balance.add(depositAmount);
     }
 
-    public void withdraw(BigDecimal withdrawalAmount){
-        withdrawalAmount = withdrawalAmount.add(RATE);
-        balance = balance.subtract(withdrawalAmount);
+    public void withdraw(BigDecimal withdrawAmount){
+        withdrawAmount = withdrawAmount.add(RATE);
+        balance = balance.subtract(withdrawAmount);
     }
 
     public String toString(){

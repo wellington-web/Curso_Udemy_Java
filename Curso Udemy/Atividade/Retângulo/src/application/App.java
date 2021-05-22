@@ -25,7 +25,7 @@ public class App {
         System.out.println("Enter with the height of rectangle: ");
         rectangle.height = sc.nextDouble();
 
-        System.out.println("Enter with the Base of rectangle: ");
+        System.out.println("Enter with the base of rectangle: ");
         rectangle.base = sc.nextDouble();
 
         Double area = rectangle.area();

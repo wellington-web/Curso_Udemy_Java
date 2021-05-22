@@ -20,7 +20,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        Room[] vect = new Room[10];
+        Room[] vector = new Room[10];
 
         System.out.print("How many rooms will be rented? ");
         int n = sc.nextInt();
@@ -35,15 +35,15 @@ public class App {
 
             System.out.print("Which room will be rented: ");
             Integer nRoom = sc.nextInt();
-            vect[nRoom] = new Room(name, email);
+            vector[nRoom] = new Room(name, email);
             Room room = new Room(name, email);
 
             System.out.printf("Inform %2do. of %d: Room:%d %s \n",(i),n,nRoom,room);
             System.out.println("Next room.");
         }
         for (int i=0; i<10; i++){
-            if (vect[i] != null){
-                System.out.println("Allocated room: " + i + ", " + vect[i]);
+            if (vector[i] != null){
+                System.out.println("Allocated room: " + i + ", " + vector[i]);
             }
         }
         sc.close();

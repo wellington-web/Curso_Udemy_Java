@@ -36,7 +36,7 @@ public class App {
             System.out.println("Employed " + (i + 1) + " : ");
 
             System.out.print("Enter the employed ID: ");
-            Integer id = sc.nextInt();
+            int id = sc.nextInt();
             while (hasId(list,id)) {
                 System.out.println("ID already taken! Try again: ");
                 id = sc.nextInt();
@@ -64,7 +64,7 @@ public class App {
         }
         else {
             System.out.print("Enter the percentage: ");
-            Double percentage = sc.nextDouble();
+            BigDecimal percentage = sc.nextBigDecimal();
             list.get(pos).increaseSalary(percentage);
         }
 

@@ -35,8 +35,8 @@ public class App {
         y.b = sc.nextDouble();
         y.c = sc.nextDouble();
 
-        double areaX = x.area();
-        double areaY = y.area();
+        Double areaX = x.area();
+        Double areaY = y.area();
 
         System.out.printf("Area of triangle X : %.2f%n",areaX);
         System.out.printf("Area of triangle Y : %.2f%n",areaY);

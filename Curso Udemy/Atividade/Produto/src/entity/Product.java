@@ -6,9 +6,12 @@ public class Product {
 
     private String name;
     private BigDecimal price;
-    private Integer stock;
+    private BigDecimal stock;
 
-    public Product(String name, BigDecimal price, Integer stock) {
+    public Product() {
+    }
+
+    public Product(String name, BigDecimal price, BigDecimal stock) {
         this.name = name;
         this.price = price;
         this.stock = stock;
@@ -30,25 +33,25 @@ public class Product {
         this.price = price;
     }
 
-    public Integer getStock() {
+    public BigDecimal getStock() {
         return stock;
     }
 
-    public Integer setStock(Integer stock) {
+    public BigDecimal setStock(BigDecimal stock) {
         this.stock = stock;
         return stock;
     }
 
     public BigDecimal stockPrice() {
-        return price.multiply(BigDecimal.valueOf(stock));
+        return price.multiply(stock);
     }
 
-    public Integer stockAdd(Integer stockAdd) {
-        return setStock(stock + stockAdd);
+    public BigDecimal stockAdd(BigDecimal stockAdd) {
+        return setStock(stock.add(stockAdd));
     }
 
-    public Integer withdrawStock(Integer quantityWithdraw) {
-        return setStock(stock - quantityWithdraw);
+    public BigDecimal withdrawStock(BigDecimal quantityWithdraw) {
+        return setStock(stock.subtract(quantityWithdraw));
     }
 
     public String toString() {

@@ -9,6 +9,7 @@ package application;
 
 import entity.Employed;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -27,15 +28,21 @@ public class App {
         employed.setName(sc.nextLine());
 
         System.out.print("Salary: ");
-        employed.setGrossSalary(sc.nextBigDecimal());
+        employed.setSalary(sc.nextBigDecimal());
 
         System.out.print("Tax: ");
-        employed.setTaxPercentage(sc.nextDouble());
+        BigDecimal taxPercentage = sc.nextBigDecimal();
+        employed.setTaxPercentage(taxPercentage);
+
+        employed.netSalary();
 
         System.out.println(employed.toStringDataSalaryWithoutIncrease());
 
         System.out.println("Enter the percentage you want to increase the employee's salary: ");
-        employed.setPercentageOfIncrease(sc.nextDouble());
+        BigDecimal increasePercentage = sc.nextBigDecimal();
+        employed.setIncreasePercentage(increasePercentage);
+
+        employed.netSalaryIncrease();
 
         System.out.println(employed.toStringDataSalaryWithIncrease());
 
