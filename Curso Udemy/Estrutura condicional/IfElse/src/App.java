@@ -1,7 +1,6 @@
 /*************************************************************************************************************
- * 1 - Fazer um programa para ler um valor inteiro X (1 <= X <= 1000).
- * 2 - Mostrar os ímpares de 1 até X.
- * 3 - Um valor por linha.
+ * 1 - Fazer um programa para ler um número inteiro
+ * 2 - Depois dizer se este número é negativo ou não.
  **************************************************************************************************************/
 
 import java.util.Scanner;
@@ -12,12 +11,17 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int x = sc.nextInt();
+        int number;
 
-        for (int i=1; i<=x; i++) {
-            if (i % 2 != 0) {
-                System.out.println(i);
-            }
+        System.out.println("Enter with one number: ");
+
+        number = sc.nextInt();
+
+        if (number < 0){
+            System.out.println("Number is negative");
+        }
+        else {
+            System.out.println("Number is not negative");
         }
 
         sc.close();

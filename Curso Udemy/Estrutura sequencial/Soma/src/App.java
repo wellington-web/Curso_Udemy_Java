@@ -1,7 +1,6 @@
 /*************************************************************************************************************
- * 1 - Fazer um programa para ler um valor inteiro X (1 <= X <= 1000).
- * 2 - Mostrar os ímpares de 1 até X.
- * 3 - Um valor por linha.
+ * 1 - Fazer um programa para ler dois valores inteiros.
+ * 2 - Mostrar na tela a soma desses números com uma mensagem explicativa.
  **************************************************************************************************************/
 
 import java.util.Scanner;
@@ -12,13 +11,14 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int x = sc.nextInt();
+        int A, B, Sum;
 
-        for (int i=1; i<=x; i++) {
-            if (i % 2 != 0) {
-                System.out.println(i);
-            }
-        }
+        A = sc.nextInt();
+        B = sc.nextInt();
+
+        Sum = A + B;
+
+        System.out.println("Sum = " + Sum);
 
         sc.close();
     }

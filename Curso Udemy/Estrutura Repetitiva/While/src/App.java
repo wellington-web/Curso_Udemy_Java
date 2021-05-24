@@ -1,7 +1,5 @@
 /*************************************************************************************************************
- * 1 - Fazer um programa para ler um valor inteiro X (1 <= X <= 1000).
- * 2 - Mostrar os ímpares de 1 até X.
- * 3 - Um valor por linha.
+ * 1 - É uma estrutura de controle que repete um bloco de comandos enquanto uma condição for verdadeira.
  **************************************************************************************************************/
 
 import java.util.Scanner;
@@ -12,13 +10,19 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int x = sc.nextInt();
+        int number;
+        int result= 0;
 
-        for (int i=1; i<=x; i++) {
-            if (i % 2 != 0) {
-                System.out.println(i);
-            }
+        System.out.println("Enter the number: ");
+
+        number = sc.nextInt();
+
+        while (number != 0) {
+            result += number;
+            number = sc.nextInt();
         }
+
+        System.out.println(result);
 
         sc.close();
     }

@@ -1,7 +1,8 @@
 /*************************************************************************************************************
- * 1 - Fazer um programa para ler um valor inteiro X (1 <= X <= 1000).
- * 2 - Mostrar os ímpares de 1 até X.
- * 3 - Um valor por linha.
+ * 1 - Fazer um programa para ler um valor (N).
+ * 2 - Calcular e escrever seu respectivo fatorial.
+ * 3 - Fatorial de ( N = N * (N-1) * (N-2) * (N-3) * ... * 1.).
+ * 4 - Lembrando que, por definição, fatorial de 0 é 1.
  **************************************************************************************************************/
 
 import java.util.Scanner;
@@ -12,13 +13,15 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int x = sc.nextInt();
+        int n = sc.nextInt();
 
-        for (int i=1; i<=x; i++) {
-            if (i % 2 != 0) {
-                System.out.println(i);
-            }
+        int factorial = 1;
+
+        for (int i=1; i<=n; i++) {
+            factorial = factorial * i;
         }
+
+        System.out.println(factorial);
 
         sc.close();
     }

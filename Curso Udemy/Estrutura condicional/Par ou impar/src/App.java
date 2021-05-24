@@ -1,7 +1,5 @@
 /*************************************************************************************************************
- * 1 - Fazer um programa para ler um valor inteiro X (1 <= X <= 1000).
- * 2 - Mostrar os ímpares de 1 até X.
- * 3 - Um valor por linha.
+ * 1 - Fazer um programa para ler um número inteiro e dizer se este número é par ou ímpar.
  **************************************************************************************************************/
 
 import java.util.Scanner;
@@ -12,14 +10,20 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int x = sc.nextInt();
+        int number;
 
-        for (int i=1; i<=x; i++) {
-            if (i % 2 != 0) {
-                System.out.println(i);
-            }
+        System.out.println("Enter the number: ");
+
+        number = sc.nextInt();
+
+        if(number % 2 == 0) {
+            System.out.println("It's even number");
+        }
+        else {
+            System.out.println("It's odd number");
         }
 
         sc.close();
+
     }
 }
