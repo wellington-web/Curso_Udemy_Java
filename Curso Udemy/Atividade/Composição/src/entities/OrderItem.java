@@ -1,34 +1,36 @@
 package entities;
 
+import java.math.BigDecimal;
+
 public class OrderItem {
 
-    private Integer quantity;
-    private Double price;
+    private BigDecimal quantity;
+    private BigDecimal price;
 
     private Product product;
 
     public OrderItem() {
     }
 
-    public OrderItem(Integer quantity, Double price, Product product) {
+    public OrderItem(BigDecimal quantity, BigDecimal price, Product product) {
         this.quantity = quantity;
         this.price = price;
         this.product = product;
     }
 
-    public Integer getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -40,8 +42,8 @@ public class OrderItem {
         this.product = product;
     }
 
-    public double subTotal() {
-        return price * quantity;
+    public BigDecimal subTotal() {
+        return price.multiply(quantity);
     }
 
     @Override

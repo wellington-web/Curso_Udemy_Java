@@ -2,6 +2,7 @@ package entities;
 
 import entities.enums.OrderStatus;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,10 +60,10 @@ public class Order {
         items.remove(item);
     }
 
-    public double total() {
-        double sum = 0.0;
+    public BigDecimal total() {
+        BigDecimal sum = null;
         for (OrderItem it : items) {
-            sum += it.subTotal();
+            sum.add(sum.add(it.subTotal()));
         }
         return sum;
     }

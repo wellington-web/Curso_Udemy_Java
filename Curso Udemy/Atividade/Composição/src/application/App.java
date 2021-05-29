@@ -1,5 +1,7 @@
 /*************************************************************************************************************
- * 1 - Fazer um programa
+ * 1 - Ler os dados de um pedido com N itens (N fornecido pelo usuário). Depois, mostrar um
+ * sumário do pedido conforme exemplo (próxima página). Nota: o instante do pedido deve ser
+ * o instante do sistema: new Date()
  ***************************************************************************************************************/
 
 package application;
@@ -10,6 +12,7 @@ import entities.OrderItem;
 import entities.Product;
 import entities.enums.OrderStatus;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,10 +56,10 @@ public class App {
             String productName = sc.nextLine();
 
             System.out.print("Product price: ");
-            double productPrice = sc.nextDouble();
+            BigDecimal productPrice = sc.nextBigDecimal();
 
             System.out.print("Quantity: ");
-            int quantity = sc.nextInt();
+            BigDecimal quantity = sc.nextBigDecimal();
 
             Product product = new Product(productName, productPrice);
 
