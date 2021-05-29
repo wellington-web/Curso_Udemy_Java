@@ -30,18 +30,20 @@ public class App {
             char resp = sc.next().charAt(0);
 
             System.out.println("Product");
+
             System.out.print("Name: ");
             sc.nextLine();
             String name = sc.nextLine();
+
             System.out.print("Price: ");
             BigDecimal price = sc.nextBigDecimal();
+
             if (resp == 'c') {
                 list.add(new Product(name, price));
             } else if (resp == 'i') {
                 System.out.print("Customs fee:");
                 BigDecimal customsFee = sc.nextBigDecimal();
                 list.add(new ImportedProduct(name, price, customsFee));
-
             } else {
                 System.out.print("Manufacture date (DD/MM/YYYY): ");
                 Date manufactere = sdf1.parse(sc.next());
