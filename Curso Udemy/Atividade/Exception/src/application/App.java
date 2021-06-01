@@ -31,7 +31,7 @@ public class App {
         BigDecimal amount = sc.nextBigDecimal();
         try {
             Account.withdraw(amount);
-            System.out.printf("Novo saldo: %.2f%n", Account.getBalance());
+            System.out.printf("New Balance: %.2f%n", Account.getBalance());
         }
         catch (DomainException e) {
             System.out.println(e.getMessage());
